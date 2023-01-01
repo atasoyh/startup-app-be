@@ -1,0 +1,26 @@
+type Phase {
+  id: ID!
+  name: String!
+  tasks: [Task]!
+}
+
+input CreatePhaseInput {
+  name: String!
+  tasks: [ID]
+}
+
+input UpdatePhaseInput {
+  id: ID!
+  name: String
+  tasks: [ID]!
+}
+
+type Query {
+  phases: [Phase]
+}
+
+type Mutation {
+  createPhase(input: CreatePhaseInput!): Phase!
+  updatePhase(input: UpdatePhaseInput!): Phase!
+  deletePhase(id: ID!): Phase!
+}
