@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { UseCasesModule } from 'src/usecases/usecases.module';
 import { PhaseResolver } from './phase.resolver';
-
+import { PhaseModule as PhaseUsecaseModule } from 'src/usecases/phase/phase.module';
 @Module({
-  imports: [UseCasesModule],
+  imports: [PhaseUsecaseModule],
   providers: [PhaseResolver],
 })
 export class PhaseModule {}

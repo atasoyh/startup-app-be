@@ -1,6 +1,8 @@
+import { Injectable } from '@nestjs/common';
 import { TaskRepository } from '../../interfaces/data/task-repository.interface';
 import { Task } from '../../models/task.model';
 
+@Injectable()
 export class TaskMemoryRepository implements TaskRepository {
   private tasks: Task[] = [];
 

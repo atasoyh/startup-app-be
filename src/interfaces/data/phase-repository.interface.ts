@@ -4,6 +4,8 @@ import {
   UpdatePhaseInput,
 } from '../../models/phase.model';
 
+export const PHASE_REPOSITORY = 'PHASE_REPOSITORY';
+
 export interface PhaseRepository {
   findAll(): Promise<Phase[]>;
   findById(id: string): Promise<Phase | undefined>;
