@@ -8,14 +8,24 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export class CreateCompanyInput {
+    name: string;
+}
+
+export class UpdateCompanyInput {
+    id: string;
+    name?: Nullable<string>;
+    phases?: Nullable<Nullable<string>[]>;
+}
+
 export class CreatePhaseInput {
     name: string;
-    tasks?: Nullable<Nullable<string>[]>;
+    companyId: string;
 }
 
 export class UpdatePhaseInput {
     id: string;
-    name?: Nullable<string>;
+    name: string;
     tasks: Nullable<string>[];
 }
 
@@ -29,19 +39,27 @@ export class UpdateTaskInput {
     completed: boolean;
 }
 
-export class Phase {
+export class Company {
     id: string;
     name: string;
-    tasks: Nullable<Task>[];
+    phases: Nullable<Phase>[];
 }
 
 export abstract class IQuery {
-    abstract phases(): Nullable<Nullable<Phase>[]> | Promise<Nullable<Nullable<Phase>[]>>;
+    abstract company(id: string): Nullable<Company> | Promise<Nullable<Company>>;
 
-    abstract tasks(): Nullable<Nullable<Task>[]> | Promise<Nullable<Nullable<Task>[]>>;
+    abstract phase(id: string): Nullable<Phase> | Promise<Nullable<Phase>>;
+
+    abstract task(id: string): Nullable<Task> | Promise<Nullable<Task>>;
 }
 
 export abstract class IMutation {
+    abstract createCompany(input: CreateCompanyInput): Company | Promise<Company>;
+
+    abstract updateCompany(input: UpdateCompanyInput): Company | Promise<Company>;
+
+    abstract deleteCompany(id: string): Company | Promise<Company>;
+
     abstract createPhase(input: CreatePhaseInput): Phase | Promise<Phase>;
 
     abstract updatePhase(input: UpdatePhaseInput): Phase | Promise<Phase>;
@@ -53,6 +71,12 @@ export abstract class IMutation {
     abstract updateTask(input: UpdateTaskInput): Task | Promise<Task>;
 
     abstract deleteTask(id: string): Task | Promise<Task>;
+}
+
+export class Phase {
+    id: string;
+    name: string;
+    tasks: Nullable<Task>[];
 }
 
 export class Task {

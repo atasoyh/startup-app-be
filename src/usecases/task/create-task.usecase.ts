@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import {
   PhaseRepository,
   PHASE_REPOSITORY,
@@ -21,7 +21,11 @@ export class CreateTaskUseCase {
     const newTask = { id, name: createTaskInput.name, completed: false };
     const task = await this.taskRepository.create(newTask);
     const phase = await this.phaseRepository.findById(createTaskInput.phaseId);
+    if (!phase) {
+      throw new NotFoundException(`Phase ${createTaskInput.phaseId} not found`);
+    }
     phase.tasks.push(id);
+    await this.phaseRepository.update(phase);
     return task;
   }
 }

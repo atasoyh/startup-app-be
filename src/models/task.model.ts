@@ -1,11 +1,6 @@
 export class Task {
   id: string;
-  name: string;
-  completed: boolean;
-}
-
-export class UpdateTaskInput {
-  id: string;
+  name?: string;
   completed: boolean;
 }
 

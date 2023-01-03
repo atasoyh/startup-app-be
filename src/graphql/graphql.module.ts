@@ -4,6 +4,7 @@ import { join } from 'path';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TaskModule } from './task/task.module';
 import { PhaseModule } from './phase/phase.module';
+import { CompanyModule } from './company/company.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { PhaseModule } from './phase/phase.module';
     }),
     TaskModule,
     PhaseModule,
+    CompanyModule,
   ],
 })
 export class GraphqlModule {}

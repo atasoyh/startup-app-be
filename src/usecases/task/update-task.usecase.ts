@@ -1,16 +1,18 @@
-import { Inject } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import {
   TaskRepository,
   TASK_REPOSITORY,
 } from '../../interfaces/data/task-repository.interface';
-import { Task, UpdateTaskInput } from '../../models/task.model';
+import { Task } from '../../models/task.model';
 
+@Injectable()
 export class UpdateTaskUseCase {
   constructor(
     @Inject(TASK_REPOSITORY) private taskRepository: TaskRepository,
   ) {}
 
-  async execute(taskInput: UpdateTaskInput): Promise<Task> {
-    return this.taskRepository.update(taskInput);
+  async execute(task: Task): Promise<Task> {
+    // TODO handle with not found control before update req.!
+    return this.taskRepository.update(task);
   }
 }

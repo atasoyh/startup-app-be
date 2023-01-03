@@ -1,0 +1,25 @@
+type Company {
+  id: ID!
+  name: String!
+  phases: [Phase]!
+}
+
+input CreateCompanyInput {
+  name: String!
+}
+
+input UpdateCompanyInput {
+  id: ID!
+  name: String
+  phases: [ID]
+}
+
+type Query {
+  company(id: ID!): Company
+}
+
+type Mutation {
+  createCompany(input: CreateCompanyInput!): Company!
+  updateCompany(input: UpdateCompanyInput!): Company!
+  deleteCompany(id: ID!): Company!
+}

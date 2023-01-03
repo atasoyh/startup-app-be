@@ -15,7 +15,7 @@ input UpdateTaskInput {
 }
 
 type Query {
-  tasks: [Task]
+  task(id: ID!): Task
 }
 
 type Mutation {

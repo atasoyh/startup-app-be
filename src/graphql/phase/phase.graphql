@@ -6,17 +6,17 @@ type Phase {
 
 input CreatePhaseInput {
   name: String!
-  tasks: [ID]
+  companyId: ID!
 }
 
 input UpdatePhaseInput {
   id: ID!
-  name: String
+  name: String!
   tasks: [ID]!
 }
 
 type Query {
-  phases: [Phase]
+  phase(id: ID!): Phase
 }
 
 type Mutation {

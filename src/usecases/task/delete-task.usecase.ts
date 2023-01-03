@@ -12,6 +12,7 @@ export class DeleteTaskUseCase {
   ) {}
 
   async execute(id: string): Promise<Task> {
+    // TODO handle with not found control before!
     return this.taskRepository.delete(id);
   }
 }

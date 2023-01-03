@@ -1,4 +1,4 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import {
   TaskRepository,
   TASK_REPOSITORY,
@@ -10,12 +10,9 @@ export class ListTasksUseCase {
   constructor(
     @Inject(TASK_REPOSITORY)
     private taskRepository: TaskRepository,
-  ) {
-    console.log('listATskusecase is created');
-  }
+  ) {}
 
-  async execute(): Promise<Task[]> {
-    console.log('ListTasksUseCase ');
-    return this.taskRepository.findAll();
+  async execute(ids: string[]): Promise<Task[]> {
+    return this.taskRepository.findByIds(ids);
   }
 }

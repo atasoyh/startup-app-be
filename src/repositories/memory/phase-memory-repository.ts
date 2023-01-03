@@ -1,10 +1,8 @@
+import { Injectable } from '@nestjs/common';
 import { PhaseRepository } from '../../interfaces/data/phase-repository.interface';
-import {
-  CreatePhaseInput,
-  Phase,
-  UpdatePhaseInput,
-} from '../../models/phase.model';
+import { Phase } from '../../models/phase.model';
 
+@Injectable()
 export class PhaseMemoryRepository implements PhaseRepository {
   private phases: Phase[] = [];
 
@@ -19,15 +17,19 @@ export class PhaseMemoryRepository implements PhaseRepository {
     return this.phases.find((phase) => phase.id === id);
   }
 
-  async create(phaseInput: CreatePhaseInput): Promise<Phase> {
-    const phase = { id: '', name: 'test', tasks: [] };
+  async findByIds(ids: string[]): Promise<Phase[]> {
+    return this.phases.filter((phase) => ids.includes(phase.id));
+  }
+
+  async create(phase: Phase): Promise<Phase> {
+    this.phases.push(phase);
     return phase;
   }
 
-  async update(phaseInput: UpdatePhaseInput): Promise<Phase> {
-    const index = this.phases.findIndex((t) => t.id === phaseInput.id);
+  async update(phase: Phase): Promise<Phase> {
+    const index = this.phases.findIndex((t) => t.id === phase.id);
     if (index >= 0) {
-      this.phases[index] = { ...this.phases[index], ...phaseInput };
+      this.phases[index] = { ...this.phases[index], ...phase };
     }
     return this.phases[index];
   }
