@@ -23,7 +23,6 @@ export class CompanyResolver {
   async createCompany(
     @Args('input') input: CreateCompanyInput,
   ): Promise<CompanyDTO> {
-    console.log(input, 'company resolver');
     return this.createCompanyUseCase.execute(input);
   }
 

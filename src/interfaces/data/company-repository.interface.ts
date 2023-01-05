@@ -3,6 +3,7 @@ import { Company } from '../../models/company.model';
 export const COMPANY_REPOSITORY = 'COMPANY_REPOSITORY';
 
 export interface CompanyRepository {
+  findAll(): Promise<Company[]>;
   findById(id: string): Promise<Company | undefined>;
   create(company: Company): Promise<Company>;
   update(company: Company): Promise<Company>;

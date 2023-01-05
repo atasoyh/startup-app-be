@@ -6,7 +6,6 @@ import {
 import { CompanyDTO, CreateCompanyInput } from 'src/models/company.model';
 import { GetCompanyByIdUseCase } from './get-company-by-id.usecase';
 import InitialData from '../../constants/predefined-company-data';
-import { Phase } from 'src/models/phase.model';
 import { CreatePhaseUseCase } from '../phase/create-phase.usecase';
 import { CreateTaskUseCase } from '../task/create-task.usecase';
 @Injectable()
@@ -19,10 +18,8 @@ export class CreateCompanyUseCase {
   ) {}
 
   async execute(createCompanyInput: CreateCompanyInput): Promise<CompanyDTO> {
-    console.log('create-company execute');
     const id = this.companyRepository.generateNewId();
     const name = createCompanyInput.name;
-    console.log({ id, name });
     await this.companyRepository.create({
       id,
       name,

@@ -11,7 +11,6 @@ export class TaskMemoryRepository implements TaskRepository {
   }
 
   async findAll(): Promise<Task[]> {
-    console.log('findAll');
     return this.tasks;
   }
 

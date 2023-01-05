@@ -27,7 +27,6 @@ export class TaskResolver {
 
   @Mutation('updateTask')
   async updateTask(@Args('input') input: Task): Promise<Task> {
-    console.log(input);
     return this.updateTaskUseCase.execute(input);
   }
 
