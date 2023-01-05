@@ -3,9 +3,9 @@ import {
   Company,
   CompanyDTO,
   CreateCompanyInput,
-} from 'src/models/company.model';
-import { GetCompanyByIdUseCase } from 'src/usecases/company/get-company-by-id.usecase';
-import { CreateCompanyUseCase } from 'src/usecases/company/create-company.usecase';
+} from '../../models/company.model';
+import { GetCompanyByIdUseCase } from '../../usecases/company/get-company-by-id.usecase';
+import { CreateCompanyUseCase } from '../../usecases/company/create-company.usecase';
 
 @Resolver((of) => CompanyDTO)
 export class CompanyResolver {

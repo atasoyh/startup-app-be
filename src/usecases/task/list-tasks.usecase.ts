@@ -2,8 +2,8 @@ import { Inject, Injectable } from '@nestjs/common';
 import {
   TaskRepository,
   TASK_REPOSITORY,
-} from 'src/interfaces/data/task-repository.interface';
-import { Task } from 'src/models/task.model';
+} from '../../interfaces/data/task-repository.interface';
+import { Task } from '../../models/task.model';
 
 @Injectable()
 export class ListTasksUseCase {

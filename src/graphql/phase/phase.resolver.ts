@@ -4,8 +4,7 @@ import { ListPhasesUseCase } from '../../usecases/phase/list-phases.usecase';
 import { CreatePhaseUseCase } from '../../usecases/phase/create-phase.usecase';
 import { UpdatePhaseUseCase } from '../../usecases/phase/update-phase.usecase';
 import { DeletePhaseUseCase } from '../../usecases/phase/delete-phase.usecase';
-import { Task } from 'src/models/task.model';
-import { GetPhaseByIdUseCase } from 'src/usecases/phase/get-phase-by-id.usecase';
+import { GetPhaseByIdUseCase } from '../../usecases/phase/get-phase-by-id.usecase';
 
 @Resolver((of) => PhaseDTO)
 export class PhaseResolver {

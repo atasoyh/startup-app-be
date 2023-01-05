@@ -18,7 +18,7 @@ import { handleNotFound } from '../utils/handle-not-found';
 import {
   PhaseRepository,
   PHASE_REPOSITORY,
-} from 'src/interfaces/data/phase-repository.interface';
+} from '../../interfaces/data/phase-repository.interface';
 
 @Injectable()
 export class UpdateTaskUseCase {

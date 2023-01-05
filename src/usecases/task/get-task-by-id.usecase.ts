@@ -1,9 +1,9 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import {
   TaskRepository,
   TASK_REPOSITORY,
-} from 'src/interfaces/data/task-repository.interface';
-import { Task } from 'src/models/task.model';
+} from '../../interfaces/data/task-repository.interface';
+import { Task } from '../../models/task.model';
 import { handleNotFound } from '../utils/handle-not-found';
 
 @Injectable()

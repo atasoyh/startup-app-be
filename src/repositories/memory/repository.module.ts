@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { TaskMemoryRepository } from './task-memory-repository';
 import { PhaseMemoryRepository } from './phase-memory-repository';
 import { TASK_REPOSITORY } from '../../interfaces/data/task-repository.interface';
-import { PHASE_REPOSITORY } from 'src/interfaces/data/phase-repository.interface';
-import { COMPANY_REPOSITORY } from 'src/interfaces/data/company-repository.interface';
+import { PHASE_REPOSITORY } from '../../interfaces/data/phase-repository.interface';
+import { COMPANY_REPOSITORY } from '../../interfaces/data/company-repository.interface';
 import { CompanyMemoryRepository } from './company-memory-repository';
 
 const taskRepositoryProvider = {

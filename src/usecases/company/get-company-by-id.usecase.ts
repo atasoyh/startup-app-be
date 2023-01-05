@@ -1,9 +1,9 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import {
   CompanyRepository,
   COMPANY_REPOSITORY,
-} from 'src/interfaces/data/company-repository.interface';
-import { CompanyDTO } from 'src/models/company.model';
+} from '../../interfaces/data/company-repository.interface';
+import { CompanyDTO } from '../../models/company.model';
 import { ListPhasesUseCase } from '../phase/list-phases.usecase';
 import { handleNotFound } from '../utils/handle-not-found';
 

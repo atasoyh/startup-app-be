@@ -1,10 +1,9 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { CreateTaskInput, Task } from '../../models/task.model';
-import { ListTasksUseCase } from '../../usecases/task/list-tasks.usecase';
 import { CreateTaskUseCase } from '../../usecases/task/create-task.usecase';
 import { UpdateTaskUseCase } from '../../usecases/task/update-task.usecase';
 import { DeleteTaskUseCase } from '../../usecases/task/delete-task.usecase';
-import { GetTaskByIdUseCase } from 'src/usecases/task/get-task-by-id.usecase';
+import { GetTaskByIdUseCase } from '../../usecases/task/get-task-by-id.usecase';
 
 @Resolver('Task')
 export class TaskResolver {

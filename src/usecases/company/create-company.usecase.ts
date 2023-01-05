@@ -2,8 +2,8 @@ import { Inject, Injectable } from '@nestjs/common';
 import {
   CompanyRepository,
   COMPANY_REPOSITORY,
-} from 'src/interfaces/data/company-repository.interface';
-import { CompanyDTO, CreateCompanyInput } from 'src/models/company.model';
+} from '../../interfaces/data/company-repository.interface';
+import { CompanyDTO, CreateCompanyInput } from '../../models/company.model';
 import { GetCompanyByIdUseCase } from './get-company-by-id.usecase';
 import InitialData from '../../constants/predefined-company-data';
 import { CreatePhaseUseCase } from '../phase/create-phase.usecase';

@@ -1,9 +1,8 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { Phase } from 'graphql';
 import {
   CompanyRepository,
   COMPANY_REPOSITORY,
-} from 'src/interfaces/data/company-repository.interface';
+} from '../../interfaces/data/company-repository.interface';
 import {
   PhaseRepository,
   PHASE_REPOSITORY,
