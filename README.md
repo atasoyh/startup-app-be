@@ -35,7 +35,7 @@ $ npm run test:e2e
 
 ## Note for the repositories.
 
-To store the data, project uses the memory. There is are interfaces for repositories. If we made SQL or NOSQL like DB implementations; there might be small differences on the repository implementations.
+To store the data, project uses the memory. There are interfaces for repositories. If we made relational or non-relation like DB implementations; there might be small differences on the repository implementations.
 
 The biggest difference would be how we keep the task data  
 On the SQL like DB -> Task{companyId, phaseId, name, completed}, Phase{id,companyId, name, dependedPhaseId or phaseIndex}, Company{id, name}
